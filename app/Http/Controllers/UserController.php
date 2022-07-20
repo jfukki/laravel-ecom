@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Session;
 
 class UserController extends Controller
 {
@@ -22,5 +23,11 @@ class UserController extends Controller
             $req->session()->put('user', $user);
             return redirect('/product');
         }
+    }
+
+    function logout()
+    {
+        Session::forget('user');
+        return redirect ('/login');
     }
 }

@@ -28,6 +28,10 @@ Route::get('/detail/{id}', [ProductController::class, 'detail']);
 
 Route::post('addToCart', [ProductController::class, 'addToCart']);
 
+Route::get('/logout', [UserController::class, 'logout']);
+
+
+
 
 
 
