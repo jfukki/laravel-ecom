@@ -1,3 +1,17 @@
+<?php
+ use App\Http\Controllers\ProductController;
+
+ if(session()->has('user')){
+  $total = ProductController::cartItem();
+  
+ }
+ else{
+  $total = "0";
+ } 
+
+
+?>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
@@ -26,7 +40,7 @@
 
       <ul class="navbar-nav nav-right">
         <li class="nav-item">
-          <a class="nav-link" href="#">Cart(0)</a>
+          <a class="nav-link" href="#">Cart({{$total}})</a>
         </li>
       </ul>
       

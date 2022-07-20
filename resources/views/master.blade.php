@@ -53,6 +53,30 @@
       padding: 10px;
     }
 
+    .product-detail-text-area
+    {
+      border: 1px solid #30414B;
+      background-color: whitesmoke;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      border-radius:20px;
+      padding: 40px;
+    }
+
+.product-detail-img
+{
+
+  
+  height: 550px;
+  
+
+}
+
+.product-detail-main-card
+{
+  background-color: whhite;
+  padding:40px;
+}
+
 </style>
 
 

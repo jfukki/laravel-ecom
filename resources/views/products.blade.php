@@ -51,7 +51,7 @@
                     <div class="card-body">
                         <h5 class="card-title">{{Str::limit($product['name'], 16)}}</h5>
                         <p class="card-text"><b>USD:</b> {{$product['price']}}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                        <a href="/detail/{{$product['id']}}" class="btn btn-primary">Detail</a>
                     </div>
                 </div>
             </div>
