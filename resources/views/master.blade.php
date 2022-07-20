@@ -21,6 +21,38 @@
         padding:80px 60px 80px 60px;
         margin-top:20px;
     }
+
+    .slide-image
+    {
+      height: 400px !important;
+
+    }
+
+    .custom-products-slider
+    {
+      height: 600px !important;
+    }
+
+    .slide-text
+    {
+      background-color:  #35443585;
+    }
+
+
+    .trending-product-card
+    {
+      height: 500px !important;
+      padding: 20px;
+      margin:10px;
+    }
+
+
+    .trending-product-img
+    {
+      height: 300px !important;
+      padding: 10px;
+    }
+
 </style>
 
 
