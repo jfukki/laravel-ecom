@@ -11,8 +11,15 @@
     <title>Hello, Laravel</title>
 <style>
     .custom-login{
-        padding: 160px 0px 160px 0px;
+        
+       
+    }
+
+    .login-form-custom
+    {
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding:80px 60px 80px 60px;
+        margin-top:20px;
     }
 </style>
 
