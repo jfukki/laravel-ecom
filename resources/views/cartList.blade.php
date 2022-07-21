@@ -32,7 +32,7 @@
                         <td>{{$product->name}}</td>
                         <td>-</td>
                         <td>{{$product->price}}</td>
-                        <td> <a href="{{$product->id}}"><button class="btn btn-warning btn-sm">Remove</button></a> </td>
+                        <td> <a href="/removecart/{{$product->cart_id}}"><button class="btn btn-warning btn-sm">Remove</button></a> </td>
 
                         </tr>
                         
