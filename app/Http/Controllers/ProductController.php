@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Cart;
+use App\Models\Order;
+
 use Session;
 use Illuminate\Support\Facades\DB;
 
@@ -36,7 +38,7 @@ class ProductController extends Controller
                $cart -> user_id = $req->session()->get('user')['id'];
                $cart->save();
               
-               return redirect ('/');
+               return redirect ('cartList');
 
         }else{
                 return redirect('/login');
@@ -67,7 +69,8 @@ class ProductController extends Controller
         ->where('carts.user_id', $user_id)
         ->select('products.*','carts.id as cart_id' )
         ->get();
-        return view ('cartList' , ['products' => $products]);
+        $count = $products->count();
+        return view ('cartList' , ['products' => $products, 'count'=> $count]);
     }
 
 
@@ -76,6 +79,43 @@ class ProductController extends Controller
         $cartItem = Cart::find($id);
         $cartItem->delete();
         return redirect('cartList');
+    }
+
+    public function orderNow()
+    {
+
+        $user_id = Session::get('user')['id'];
+        $total = $products = DB::table('carts')
+        ->join('products','carts.product_id', '=', 'products.id')
+        ->where('carts.user_id', $user_id)
+        ->sum('products.price');
+        return view ('ordernow' , ['total' => $total]);
+    }
+
+
+    public function orderPlace(Request $req)
+    { 
+        $user_id = Session::get('user')['id'];
+        $allCart = Cart::where('user_id', $user_id)->get();
+
+        foreach($allCart as $cart)
+        {
+            $order = new Order;
+            $order->product_id = $cart['product_id'];
+            $order->user_id = $cart['user_id'];
+            $order->status = "Pending";
+            $order->payment_method = $req->paymentmethod;
+            $order->payment_status = 'pending';
+            $order->address = $req->address;
+
+            $order->save();
+
+            Cart::where('user_id', $user_id)->delete();
+
+        }
+
+        return view('thankyou'); 
+
     }
 
 }

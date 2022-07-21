@@ -12,10 +12,15 @@
                 
             </div>
         </div>
+        
         <div class="row">
             <div class="col-md-8 offset-md-2 my-custom-cart-list">
+            @if($count == '0' )
+            
+            <h2>Cart is Empty</h2>
 
-                <table class="table">
+        @else
+        <table class="table">
                     <thead>
                         <tr>
                         <th scope="col">Image</th>
@@ -37,10 +42,19 @@
                         </tr>
                         
                         @endforeach
-                         
+                        <tr>
+                        <th scope="row"></th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>  </td>
+
+                        </tr>
                        </tbody>
                 </table>
-
+                <a href="/ordernow" class="float-end"><button class="btn btn-success btn-sm">Order Now</button></a>
+        @endif
+ 
             </div>
         </div>
     </div>
