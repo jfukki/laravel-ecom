@@ -27,6 +27,8 @@ Route::get('/', [ProductController::class, 'index']);
 Route::get('/detail/{id}', [ProductController::class, 'detail']);
 
 Route::post('addToCart', [ProductController::class, 'addToCart']);
+Route::get('cartList', [ProductController::class, 'cartList']);
+
 
 Route::get('/logout', [UserController::class, 'logout']);
 

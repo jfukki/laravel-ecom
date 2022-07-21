@@ -13,8 +13,8 @@
 
 ?>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+  <div class="container">
     <a class="navbar-brand" href="#">Ps-eCom</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -40,9 +40,15 @@
 
 
       <ul class="navbar-nav nav-right">
+      @if(Session::has('user'))  
         <li class="nav-item">
-          <a class="nav-link" href="#">Cart({{$total}})</a>
+          <a class="nav-link" href="/cartList">Cart({{$total}})</a>
         </li>
+        @else
+        <li class="nav-item">
+          <a class="nav-link" ></a>
+        </li>
+        @endif
 
 
 

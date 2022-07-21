@@ -77,6 +77,27 @@
   padding:40px;
 }
 
+.my-custom-cart-list
+{
+
+      border: 1px solid #30414B;
+      background-color: whitesmoke;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      border-radius:20px;
+      padding: 40px;
+
+}
+
+
+.top-margin
+{
+  margin-top:60px !important;
+}
+
+.cartList-img
+{
+  width:60px;
+}
 </style>
 
 
